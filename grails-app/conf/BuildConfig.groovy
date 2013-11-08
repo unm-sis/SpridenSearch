@@ -59,5 +59,8 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.3.2"
 
         compile ':cache:1.0.1'
+		//SCC 2013-11-01 - To Resolve Plug-In Problem:
+		compile ":spring-security-core:1.2.7.3"
+
     }
 }
