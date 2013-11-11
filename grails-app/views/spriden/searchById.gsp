@@ -15,15 +15,30 @@
 		maxlength="50">
     </g:textField>
     </div>
+    
+     <div>
+     <p>
+     OR
+     <p>
+     </div>
+    
     <div>
 	First Name:
 	<g:textField 
 		name="firstNameInForm" 
 		maxlength="50">
     </g:textField>
+    <div>
+	Last Name:
+	<g:textField 
+		name="lastNameInForm" 
+		maxlength="50">
+    </g:textField>
     </div>
     <input value="Submit"  type="submit"/>
 </g:form>
+<p>
+<p>
 <g:form controller="logout" action="index">
 	
     <input value="Logout"  type="submit"/>

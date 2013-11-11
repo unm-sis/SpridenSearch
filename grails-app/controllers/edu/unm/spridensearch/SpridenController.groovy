@@ -10,90 +10,92 @@ class SpridenController {
 	
 	UserCredentialsDataSourceAdapter dataSource
 	
-	def index() {
-		
-		//println(dataSource)
+	//We want to reroute any requests from
+	//index to searchById
+	def index() 
+	{
 		redirect (action: "searchById")
 		//render "Hello World"
 	}
 	
-	def listStudents = {
+	//When a user clicks on the "Submit" button on the
+	//searchById.gsp the MVC framework sends us here...
+	def listStudents = 
+	{
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		dataSource.setCredentialsForCurrentThread(auth.getName(), auth.getCredentials());
 
+		//Defining our variables that are
+		//coming in from the our view/form (searchById.gsp)
 		def banId = params.bannerIdInForm
 		def firName = params.firstNameInForm
+		def lasName = params.lastNameInForm
 		def results
-				
+		
+		//Adding a few console comments for logging purposes...		
 		println("Ban ID: " + banId)
 		println("First Name: " + firName)
-		
 		println("thread:" + Thread.currentThread().getId() + " " +Thread.currentThread().getName())
-		
-		println("auth name" + auth.getName());
+		println("auth name: " + auth.getName());
 
 		
-		
-		if (banId != "")
-		{
-			
+		//If a string is used in a conditional statement
+		//Groovy will return true if there are characters or
+		//whitespace.  
+		if (banId)
+		{			
 			results = Spriden.where 
 			{
 				id == banId
 				changeIndicator == null
 			}
 		}
-		else
+		else //If the string is empty or null, the conditional statement is false
 		{
-			results = Spriden.where
+			if (firName && lasName)
 			{
-				firstName == firName
-				changeIndicator == null
+				//If the first name and last name
+				//are available then we will query
+				//by first name, last name, and change Indicator
+				results = Spriden.where
+				{
+					firstName == firName
+					lastName == lasName
+					changeIndicator == null
+				}
 			}
+			else if (firName)
+			{
+				//If the user only enters the first name we
+				//will only query using first name and change indicator
+				results = Spriden.where
+				{
+					firstName == firName
+					changeIndicator == null
+				}
+			}
+			else if (lasName)
+			{
+				//If the user enters only the last name we
+				//will only query using the last name and change indicator
+				results = Spriden.where
+				{
+					lastName == lasName
+					changeIndicator == null
+				}
+			}
+		}//End Else Statement
 			
-		}
-			
-		//def oneStudent = Spriden.list()
+		//Our results are placed in a map
+		//and handed to the view that matches
+		//this controller method (listStudents.gsp)
 		[oneStudent:results]
 	}
 	
-//	def listStudents = {
-//		def allStudents = Spriden.list()
-//		[allStudents:allStudents]
-//	}
-	
-	def listOneStudent = {
-		
-		def banId = params.bannerIdInForm
-		
-		println(banId)
-		
-//		def fname = "St%"
-//		def lname = "Cro%"
-		
-		//def results = Spriden.findAllByFirstName(fname)
-		//def results = Spriden.findAllByFirstNameAndChangeIndicatorIsNull(fname)
-		//def results = Spriden.findAllByLastNameIlikeAndChangeIndicatorIsNull(lname)
-		//def  results = Spriden.findAllByFirstNameIlikeAndChangeIndicatorIsNull(fname)
-		
-		def results = Spriden.where {
-			id == banId
-			changeIndicator == null
-			
-		}
-		
-		
-			
-		
-			
-		//def oneStudent = Spriden.list()
-		[oneStudent:results]
-		
-		//println(results)
-	}
 	
 	@Secured(['IS_AUTHENTICATED_FULLY'])
-	def searchById = {
+	def searchById = 
+	{
 		
 	}
 	
