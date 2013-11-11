@@ -1,4 +1,4 @@
-
+package edu.unm.spridensearch
 
 import grails.plugins.springsecurity.Secured
 
@@ -30,7 +30,7 @@ class SpridenController {
 		
 		println("thread:" + Thread.currentThread().getId() + " " +Thread.currentThread().getName())
 		
-		println("auth name" + name);
+		println("auth name" + auth.getName());
 
 		
 		

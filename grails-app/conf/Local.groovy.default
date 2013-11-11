@@ -1,0 +1,6 @@
+
+environments {
+	development {
+		dataSource { url = 'jdbc:oracle:thin:@<hostname>:<port>:<database>' }
+	}
+}

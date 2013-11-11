@@ -11,6 +11,8 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+grails.config.locations = [Local]
+
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
@@ -94,3 +96,6 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'edu.unm.spridensearch.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'edu.unm.spridensearch.UserRole'
 grails.plugins.springsecurity.authority.className = 'edu.unm.spridensearch.Role'
+
+grails.plugins.springsecurity.providerNames = ['dbAuthenticationProvider']
+

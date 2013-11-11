@@ -1,26 +1,33 @@
 dataSource {
-    pooled = true
-    driverClassName = "org.h2.Driver"
-    username = "sa"
-    password = ""
-}
+    pooled = false
+    driverClassName = "oracle.jdbc.OracleDriver"
+	dialect = 'org.hibernate.dialect.Oracle10gDialect'
+	readOnly = true
+	}
+
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = false
     cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
-}
+	connection.pool_size = 0
+	temp.use_jdbc_metadata_defaults = false
+	}
 // environment specific settings
 environments {
-    development {
-        dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
-        }
-    }
+	development {
+		dataSource {
+			dbCreate = ''
+			// url specified in "Local.groovy"
+		}
+	}
+	
     test {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            //In memory
+			//url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+			//Writes a file
+			url = "jdbc:h2:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
         }
     }
     production {
@@ -40,4 +47,5 @@ environments {
             }
         }
     }
+   
 }
