@@ -96,7 +96,7 @@ class SpridenController {
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def searchById = 
 	{
-		
+		//Directs you to the view "searchById.gsp"
 	}
 	
 	//def scaffold = Spriden

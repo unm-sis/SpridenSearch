@@ -18,11 +18,21 @@
 		<r:layoutResources />
 	</head>
 	<body>
+		<!--  Goodbye Logo
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+		-->
+		<!--  SCC 2013-11-12: Added to make our application look better... -->
+		<g:render template="/layouts/header" />
 		<g:layoutBody/>
+		 
 		<div class="footer" role="contentinfo"></div>
+		
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+		
 		<g:javascript library="application"/>
+		
 		<r:layoutResources />
+		
+		
 	</body>
 </html>

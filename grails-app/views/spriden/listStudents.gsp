@@ -1,11 +1,13 @@
 <html><!-- This is a view -->
 <head>
+<meta name='layout' content='main'/>
 	<title>Student Information</title>
 </head>
 
 <body>
-<table border="3">
-	<tr>
+<div id = 'overall'>
+<table border="1">
+	<tr bgcolor="f0f0fa">
 		<td>First Name</td>
 		<td>Last Name</td>
 		<td>Banner ID</td>
@@ -26,10 +28,13 @@
 	
     <input value="Search Again"  type="submit"/>
 </g:form>
-<g:form controller="logout" action="index">
-	
-    <input value="Logout"  type="submit"/>
+</div>
+<div id = 'logout'>
+	<g:form controller="logout" action="index">
+		
+	    <input value="Logout"  type="submit"/>
 </g:form>
+</div>
 
 </body>
 

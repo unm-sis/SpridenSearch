@@ -42,20 +42,20 @@ body {
 	margin: 0 auto;
 	max-width: 960px;
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-	   -moz-box-shadow: 0 0 0.3em #255b17;
-	-webkit-box-shadow: 0 0 0.3em #255b17;
-	        box-shadow: 0 0 0.3em #255b17;
+	   -moz-box-shadow: 0 0 0.3em #5C2417;
+	-webkit-box-shadow: 0 0 0.3em #5C2417;
+	        box-shadow: 0 0 0.3em #5C2417;
 }
 
 #grailsLogo {
-	background-color: #abbf78;
+	background-color: #C08B79;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,
 .ie7 body,
 .ie8 body {
-	border-color: #255b17;
+	border-color: #5C2617;
 	border-style: solid;
 	border-width: 0 1px;
 }
@@ -73,7 +73,7 @@ a:hover, a:active {
 }
 
 h1 {
-	color: #48802c;
+	color: #802E2B;
 	font-weight: normal;
 	font-size: 1.25em;
 	margin: 0.8em 0 0.3em 0;
@@ -108,7 +108,7 @@ img {
 }
 
 .footer {
-	background: #abbf78;
+	background: #BF4125;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -118,7 +118,7 @@ img {
 }
 
 .footer a {
-	color: #255b17;
+	color: #5C2417;
 }
 
 .spinner {
@@ -399,10 +399,11 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 /* TABLES */
 
 table {
-	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
-	width: 100%;
+	width: 90%;
 	margin-bottom: 1em;
+	
+	
 }
 
 tr {
@@ -411,6 +412,8 @@ tr {
 
 tr>td:first-child, tr>th:first-child {
 	padding-left: 1.25em;
+	
+	
 }
 
 tr>td:last-child, tr>th:last-child {
@@ -423,6 +426,7 @@ td, th {
 	text-align: left;
 	vertical-align: top;
 }
+
 
 th {
 	background-color: #efefef;
@@ -476,7 +480,7 @@ th.desc a {
 }
 
 th:hover, tr:hover {
-	background: #E1F2B6;
+	background: #FE9E88;
 }
 
 /* PAGINATION */
@@ -594,3 +598,35 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+
+/* SCC 2013-111-12 SpridenSearch Customization */
+#header {
+background: #BF4125;
+padding: 2em 1em 2em 1em;
+margin-bottom: 1em;
+}
+a.header-main:link, a.header-main:visited {
+color: #fff;
+font-size: 3em;
+font-weight: bold;
+}
+.header-sub {
+color: #fff;
+font-size: 1.25em;
+font-style: italic;
+}
+
+#overall {
+		margin: 15px 0px;
+		padding: 15px;
+		text-align: left;
+	}
+	
+#logout {
+		margin: 15px 0px;
+		padding: 15px;
+		text-align: right;
+}		
+
+	
