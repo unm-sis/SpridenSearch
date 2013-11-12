@@ -1,0 +1,7 @@
+<dependencies>
+  <build />
+  <compile />
+  <test />
+  <runtime />
+  <provided />
+</dependencies>
