@@ -610,6 +610,7 @@ a.header-main:link, a.header-main:visited {
 color: #fff;
 font-size: 3em;
 font-weight: bold;
+text-decoration: none; /*This gets rid of the underscorint*/
 }
 .header-sub {
 color: #fff;

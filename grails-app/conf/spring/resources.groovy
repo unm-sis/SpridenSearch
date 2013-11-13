@@ -7,6 +7,8 @@ import edu.unm.UserDatabaseAuthenticationProvider
 //This allowed for the application to start but I still got an error:
 //| Error 2013-11-01 15:06:38,845 [localhost-startStop-1] ERROR spring.GrailsRuntimeConfigurator  - [RuntimeConfiguration] Unable to load beans from resources.groovy
 //Message: No such property: UserDatabaseAuthenticationProvider for class: resources
+//SCC 2013-11-01: Be sure to add the UserDatabaseAuthenticationProvider.groovy  
+//that is in /src/groovy/edu/unm/
 beans = {
 	lobHandlerDetector(OracleLobHandler) { nativeJdbcExtractor = new CommonsDbcpNativeJdbcExtractor() }
 

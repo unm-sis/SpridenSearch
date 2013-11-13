@@ -15,24 +15,4 @@ class UrlMappings {
 		}
 	}
 
-//class UrlMappings {
-//
-//	static mappings = {
-//		"/$controller/$action?/$id?"{ constraints { // apply constraints here
-//			} }
-//
-//		//"/"(view:"/index")
-//		//"/"(controller:"spriden", action:"searchById")
-//		
-////		"/" {
-////			controller = "spriden"
-////			action = "searchById"
-////		  }
-//		
-//		//"/index.gsp"(view:"/index")
-//		
-//		"/index.gsp"(controller: 'spriden', action: 'searchById')
-//		
-//		"500"(view:'/error')
-//	}
-//}
+

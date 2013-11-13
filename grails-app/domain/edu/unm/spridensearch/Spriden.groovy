@@ -19,7 +19,11 @@ class Spriden {
     }
 	
 	static mapping = {
+		//This is for the Banner Database:
 		table name: 'SPRIDEN', schema: 'SATURN'
+		
+		//This is for Stirling's database on his laptop:
+		//table name: 'SPRIDEN', schema: 'STIRLINGCROW'
 		
 		
 		version false
